@@ -22,8 +22,8 @@ if __name__ == '__main__':
     width, height = 512, 288
     encoder_output_path = "models/dust3r_encoder.onnx"
     decoder_output_path = "models/dust3r_decoder_head.onnx"
-    model_path = "models/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth"
-    dust3r = Dust3r(model_path, width, height, device=device)
+    model_name = "DUSt3R_ViTLarge_BaseDecoder_512_dpt"
+    dust3r = Dust3r(model_name, width, height, device=device)
     decoder_head = Dust3rDecoderHead(dust3r).to(device) # Combined decoder and head
 
     img1 = torch.randn(1, 3, height, width).to(device)

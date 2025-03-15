@@ -12,8 +12,8 @@ frame2 = imread_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/5
 # Initialize Dust3r model
 conf_threshold = 3.0
 width, height = calculate_img_size((frame1.shape[1], frame1.shape[0]), 512)
-model_path = "models/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth"
-dust3r = Dust3r(model_path, width, height, symmetric=True, device=device, conf_threshold=conf_threshold)
+model_name = "DUSt3R_ViTLarge_BaseDecoder_512_dpt"
+dust3r = Dust3r(model_name, width, height, symmetric=True, device=device, conf_threshold=conf_threshold)
 
 # Run Dust3r model
 output1, output2 = dust3r(frame1, frame2)
