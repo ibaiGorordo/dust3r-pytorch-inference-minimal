@@ -113,7 +113,7 @@ wheels = [
 [[package]]
 name = "dust3r-pytorch-inference-minimal"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "einops" },
     { name = "huggingface-hub" },
