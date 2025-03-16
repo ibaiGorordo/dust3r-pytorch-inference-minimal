@@ -3,6 +3,7 @@ name = "dust3r-pytorch-inference-minimal"
 version = "0.1.0"
 description = "Minimal code for running the Dust3r model with PyTorch"
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.11"
 dependencies = [
     "einops>=0.8.1",
