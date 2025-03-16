@@ -1,5 +1,6 @@
 # dust3r-pytorch-inference-minimal
 Minimal code for running the Dust3r model with PyTorch.
+![dust3r](https://github.com/user-attachments/assets/2718f715-f23a-4261-8ef8-d8063a9ba0f0)
 
 ## Why
 The goal of this repository is to provide the minimal code to test and understand how the model works.
@@ -51,6 +52,7 @@ Example to visualize the raw output of the model: the pointclouds from both came
 ```bash
 python example_raw_output.py
 ```
+![dust3r_raw](https://github.com/user-attachments/assets/9fea7e82-e5c6-47a8-ad1c-cf5f609b668a)
 
 ## ONNX Export
 The model is divided into the encoder (dynamic batch size) and decoder-head when exporting into ONNX.
