@@ -9,6 +9,7 @@
 # timm
 # https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 from functools import partial
+from copy import deepcopy
 
 import torch
 import torch.nn as nn
