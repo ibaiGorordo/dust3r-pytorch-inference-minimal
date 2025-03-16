@@ -17,7 +17,7 @@ The goal of this repository is to provide the minimal code to test and understan
 - Remove unnecessary code for the minimum of running the model with 2 images
 
 ## Limitations
-Not all features are supported, such as global alignment, more than 2 images, etc. For those cases, the following repositories are recommended:
+Not all features are supported, such as global alignment, more than 2 images, etc. For those cases, the following repository is **recommended**:
 - [mini-duster](https://github.com/pablovela5620/mini-dust3r): A miniature version of dust3r only for performing inference. This makes it much easier to use without needing the training/data/eval code. Tested on Linux, Apple Silicon Macs, and Windows
 
 ## Installation
