@@ -3,10 +3,11 @@ from imread_from_url import imread_from_url
 from dust3r import Dust3r, ModelType, get_device, calculate_img_size
 from dust3r.visualization import visualize_output
 
+device = get_device() # Cuda or mps if available, otherwise CPU
+
 # Model parameters
 conf_threshold = 3.0
 model_type = ModelType.DUSt3R_ViTLarge_BaseDecoder_512_dpt
-device = get_device() # Cuda or mps if available, otherwise CPU
 input_size = 224 if model_type == ModelType.DUSt3R_ViTLarge_BaseDecoder_224_linear else 512
 
 # Read input images
