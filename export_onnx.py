@@ -1,7 +1,7 @@
 import onnx
 import torch
 import torch.nn as nn
-from dust3r import Dust3r
+from dust3r import Dust3r, ModelType
 from onnxsim import simplify
 
 
@@ -22,8 +22,8 @@ if __name__ == '__main__':
     width, height = 512, 288
     encoder_output_path = "models/dust3r_encoder.onnx"
     decoder_output_path = "models/dust3r_decoder_head.onnx"
-    model_name = "DUSt3R_ViTLarge_BaseDecoder_512_dpt"
-    dust3r = Dust3r(model_name, width, height, device=device)
+    model_type = ModelType.DUSt3R_ViTLarge_BaseDecoder_512_dpt
+    dust3r = Dust3r(model_type, width, height, device=device)
     decoder_head = Dust3rDecoderHead(dust3r).to(device) # Combined decoder and head
 
     img1 = torch.randn(1, 3, height, width).to(device)

@@ -1,10 +1,19 @@
-from copy import deepcopy
+# Copyright (C) 2022-present Naver Corporation. All rights reserved.
+# Licensed under CC BY-NC-SA 4.0 (non-commercial use only).
+
+
+# --------------------------------------------------------
+# Main decoder
+# --------------------------------------------------------
+# References:
+# timm
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 from functools import partial
 
 import torch
 import torch.nn as nn
 
-from .common import DropPath, Mlp, Attention, CrossAttention
+from .blocks import DropPath, Mlp, Attention, CrossAttention
 from .third_party import RoPE2D
 
 

@@ -1,10 +1,22 @@
+# Copyright (C) 2022-present Naver Corporation. All rights reserved.
+# Licensed under CC BY-NC-SA 4.0 (non-commercial use only).
+
+
+# --------------------------------------------------------
+# Main encoder
+# --------------------------------------------------------
+# References:
+# timm
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
+# https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/layers/patch_embed.py
+
 from functools import partial
 
 import torch
 import torch.nn as nn
 
 from .third_party import RoPE2D
-from .common import DropPath, Mlp, Attention
+from .blocks import DropPath, Mlp, Attention
 
 
 class Block(nn.Module):

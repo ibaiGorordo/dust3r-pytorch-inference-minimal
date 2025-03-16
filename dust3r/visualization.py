@@ -1,5 +1,5 @@
 import rerun as rr
-from .dust3r import Output
+from .utils import Output
 
 
 is_visualizer_init = False

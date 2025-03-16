@@ -8,7 +8,7 @@ import torch
 import numpy as np
 import cv2
 
-from .common import Output
+from .utils import Output
 
 
 def parse_output(points: torch.Tensor,

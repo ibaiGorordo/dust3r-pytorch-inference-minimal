@@ -1,10 +1,16 @@
+# Copyright (C) 2022-present Naver Corporation. All rights reserved.
+# Licensed under CC BY-NC-SA 4.0 (non-commercial use only).
+#
+# --------------------------------------------------------
+#  Main Dust3D class
+# --------------------------------------------------------
 import os
 
 import numpy as np
 import torch
 import torch.nn as nn
 
-from .common import Output, download_hf_model
+from .utils import Output, ModelType, download_hf_model
 from .encoder import Dust3rEncoder
 from .decoder import Dust3rDecoder
 from .head import Dust3rHead
@@ -15,7 +21,7 @@ model_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
 
 class Dust3r(nn.Module):
     def __init__(self,
-                 model_name: str,
+                 model_type: ModelType,
                  width: int = 512,
                  height: int = 512,
                  encoder_batch_size: int = 2,
@@ -31,7 +37,7 @@ class Dust3r(nn.Module):
         self.device = device
         self.conf_threshold = conf_threshold
 
-        model_path = download_hf_model(model_name)
+        model_path = download_hf_model(model_type.value)
         ckpt_dict = torch.load(model_path, map_location='cpu', weights_only=False)
         self.encoder = Dust3rEncoder(ckpt_dict, width=width, height=height, device=device, batch=encoder_batch_size)
         self.decoder = Dust3rDecoder(ckpt_dict, width=width, height=height, device=device)
